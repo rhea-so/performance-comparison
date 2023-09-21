@@ -76,3 +76,65 @@ Statistics        Avg      Stdev        Max
     others - 0
   Throughput:    27.65MB/s
 ```
+
+### DB Select
+
+```sh
+# How long does it take for 125 users to successfully complete 1 million requests?
+bombardier -c 125 -n 1000000 http://localhost:3000/db
+```
+
+> **Note**  
+> I use mariadb:10.6.8
+
+#### NestJS Express No Clustering
+
+```
+Total: 3m30s
+Statistics        Avg      Stdev        Max
+  Reqs/sec      4752.80     420.49    5497.47
+  Latency       26.30ms     1.95ms   150.82ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.37MB/s
+```
+
+#### NestJS Express Clustering
+
+```
+Total: 1m49s
+Statistics        Avg      Stdev        Max
+  Reqs/sec      9118.01    1809.83   16302.35
+  Latency       13.71ms     4.40ms   210.07ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.63MB/s
+```
+
+#### NestJS Fastify No Clustering
+
+```
+Total: 2m19s
+Statistics        Avg      Stdev        Max
+  Reqs/sec      7159.80     625.62    8259.67
+  Latency       17.46ms     1.48ms   115.41ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.65MB/s
+```
+
+#### NestJS Fastify Clustering
+
+```
+Total: 1m28s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     11278.52    1766.53   17619.30
+  Latency       11.09ms     3.98ms   235.90ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.59MB/s
+```
