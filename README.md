@@ -77,6 +77,32 @@ Statistics        Avg      Stdev        Max
   Throughput:    27.65MB/s
 ```
 
+#### Golang Fiber No Prefork
+
+```
+Total: 1m19s
+Statistics        Avg      Stdev        Max
+  Reqs/sec    125606.07    8285.51  191751.52
+  Latency        0.99ms   442.48us   148.52ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    23.61MB/s
+```
+
+#### Golang Fiber Prefork
+
+```
+Total: 1m18s
+Statistics        Avg      Stdev        Max
+  Reqs/sec    127427.26   21880.64  155492.23
+  Latency        0.98ms    62.41us    18.27ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    23.94MB/s
+```
+
 ### DB Select
 
 ```sh
@@ -152,6 +178,19 @@ Statistics        Avg      Stdev        Max
   Throughput:     2.59MB/s
 ```
 
+#### Golang Fiber No Prefork
+
+```
+Total: 50s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     19711.58    2470.99   25203.12
+  Latency        6.34ms     1.91ms    87.40ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.63MB/s
+```
+
 ---
 
 결론, Node.js의 클러스터링은 딱히 성능에 큰 이점을 가져다 주진 않는다.
@@ -159,3 +198,5 @@ Statistics        Avg      Stdev        Max
 https://stackoverflow.com/questions/26781371/node-js-cluster-doesnt-significantly-improve-performance
 
 그리고 번은 게임 체인저는 아닌 것 같다. (별로 안빠르다. IO 병목 때문인가.)
+
+고가 진짜 빠르다.
