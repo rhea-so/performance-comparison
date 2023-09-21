@@ -100,7 +100,7 @@ Statistics        Avg      Stdev        Max
   Throughput:     1.37MB/s
 ```
 
-#### NestJS Express No CLustering (bun v1.0.3)
+#### NestJS Express No Clustering (bun v1.0.3)
 
 ```
 Total: 3m8s
