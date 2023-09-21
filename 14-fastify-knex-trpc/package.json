@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon src/main.ts"
+  },
+  "dependencies": {
+    "@trpc/server": "10.38.4",
+    "fastify": "4.23.2",
+    "knex": "2.5.1",
+    "mysql": "2.18.1",
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.1",
+    "ts-node": "10.9.1"
+  }
+}

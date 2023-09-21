@@ -295,6 +295,32 @@ Statistics        Avg      Stdev        Max
   Throughput:     1.81MB/s
 ```
 
+#### Bun Knex No Clustering
+
+```
+Total: 1m25s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     11670.12    1421.95   14988.76
+  Latency       10.71ms     1.46ms    61.85ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.14MB/s
+```
+
+#### Fastify Knex tRPC
+
+```
+Total: 1m
+Statistics        Avg      Stdev        Max
+  Reqs/sec     16492.28    2774.56   23094.72
+  Latency        7.58ms     2.75ms   156.56ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     4.36MB/s
+```
+
 ---
 
 결론, Node.js의 클러스터링은 딱히 성능에 큰 이점을 가져다 주진 않는다.
@@ -314,3 +340,5 @@ Nest.js와 ORM은 성능만 놓고 보면 정말 느려터졌다.
 속도와 비용 절감으로 갈 것인가, 확장 + 생산성을 잡고 인프라에 돈을 많이 쓸 것인가.
 
 그것이 딜레마로다.
+
+Fastify + tRPC + Knex를 기반으로 돌아가는 Node.js 웹 서버를 만들어 보는 것도 좋은 경험이 될 것 같다! Nest.js에 비하면 진짜 무진장 빠르다.
