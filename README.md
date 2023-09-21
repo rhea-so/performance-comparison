@@ -100,6 +100,19 @@ Statistics        Avg      Stdev        Max
   Throughput:     1.37MB/s
 ```
 
+#### NestJS Express No CLustering (bun v1.0.3)
+
+```
+Total: 3m8s
+Statistics        Avg      Stdev        Max
+  Reqs/sec      5300.69     751.47    6923.01
+  Latency       23.58ms     2.72ms   149.77ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.29MB/s
+```
+
 #### NestJS Express Clustering
 
 ```
@@ -144,3 +157,5 @@ Statistics        Avg      Stdev        Max
 결론, Node.js의 클러스터링은 딱히 성능에 큰 이점을 가져다 주진 않는다.
 
 https://stackoverflow.com/questions/26781371/node-js-cluster-doesnt-significantly-improve-performance
+
+그리고 번은 게임 체인저는 아닌 것 같다. (별로 안빠르다. IO 병목 때문인가.)
