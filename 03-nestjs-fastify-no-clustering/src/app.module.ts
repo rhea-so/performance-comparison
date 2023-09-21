@@ -15,6 +15,7 @@ import { DBSelectController } from './db-select.controller';
       database: 'test',
       entities: [Book],
       synchronize: true,
+      poolSize: 100,
     }),
     TypeOrmModule.forFeature([Book]),
   ],
