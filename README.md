@@ -32,7 +32,29 @@ bombardier -c 125 -n 10000000 http://localhost:3000
 
 #### NestJS Express No Clustering
 
+```
+총 12분 22초 소요
+Statistics        Avg      Stdev        Max
+  Reqs/sec     13463.00     992.13   16129.21
+  Latency        9.28ms     1.17ms   675.85ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.86MB/s
+```
+
 #### NestJS Express Clustering
+
+```
+총 2분 44초 소요
+Statistics        Avg      Stdev        Max
+  Reqs/sec     60923.12   13099.81   88987.35
+  Latency        2.05ms     2.48ms   201.63ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    17.49MB/s
+```
 
 #### NestJS Fastify No Clustering
 
