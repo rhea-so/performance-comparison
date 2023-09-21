@@ -230,6 +230,71 @@ Statistics        Avg      Stdev        Max
   Throughput:     2.75MB/s
 ```
 
+#### Node.js Bulit-In MikroORM
+
+```
+Total: 1m7s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     14910.24    2659.31   21410.94
+  Latency        8.38ms     2.01ms    92.45ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.09MB/s
+```
+
+#### Node.js Bulit-In Knex
+
+```
+Total: 55s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     18165.97    2733.31   26703.76
+  Latency        6.88ms     1.48ms   128.00ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.76MB/s
+```
+
+#### Fastify Knex
+
+```
+Total: 58s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     17074.30    2798.49   22097.84
+  Latency        7.32ms     2.66ms   148.15ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.92MB/s
+```
+
+#### Fastify Knex No Clustering
+
+```
+Total: 1m30s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     11118.04    1442.66   13840.68
+  Latency       11.24ms     1.49ms    62.20ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.56MB/s
+```
+
+#### Bun Fastify Knex No Clustering
+
+```
+Total: 1m41s
+Statistics        Avg      Stdev        Max
+  Reqs/sec      9853.44    1154.98   11751.25
+  Latency       12.68ms     1.34ms    64.59ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     1.81MB/s
+```
+
 ---
 
 결론, Node.js의 클러스터링은 딱히 성능에 큰 이점을 가져다 주진 않는다.
@@ -239,3 +304,13 @@ https://stackoverflow.com/questions/26781371/node-js-cluster-doesnt-significantl
 그리고 번은 게임 체인저는 아닌 것 같다. (별로 안빠르다. IO 병목 때문인가.)
 
 고가 진짜 빠르다.
+
+근데 Node.js도 의존성 최소화하면 정말 빠르다!!!
+
+Fastify + Knex는 진짜 빠르다!
+
+Nest.js와 ORM은 성능만 놓고 보면 정말 느려터졌다.
+
+속도와 비용 절감으로 갈 것인가, 확장 + 생산성을 잡고 인프라에 돈을 많이 쓸 것인가.
+
+그것이 딜레마로다.
