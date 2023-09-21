@@ -1,23 +1,22 @@
 import { Module } from '@nestjs/common';
 import { HelloWorldController } from './hello-world.controller';
 import { Book } from './book.entity';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { DBSelectController } from './db-select.controller';
+import { MikroOrmModule } from '@mikro-orm/nestjs';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
+    MikroOrmModule.forRoot({
       type: 'mariadb',
       host: 'localhost',
       port: 3306,
-      username: 'root',
+      user: 'root',
       password: '123qwe',
-      database: 'test',
+      dbName: 'test',
       entities: [Book],
-      synchronize: true,
-      poolSize: 100,
+      pool: { min: 5, max: 100 },
     }),
-    TypeOrmModule.forFeature([Book]),
+    MikroOrmModule.forFeature([Book]),
   ],
   controllers: [HelloWorldController, DBSelectController],
 })

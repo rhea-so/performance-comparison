@@ -168,14 +168,14 @@ Statistics        Avg      Stdev        Max
 #### NestJS Fastify Clustering
 
 ```
-Total: 1m28s
+Total: 1m18s
 Statistics        Avg      Stdev        Max
-  Reqs/sec     11278.52    1766.53   17619.30
-  Latency       11.09ms     3.98ms   235.90ms
+  Reqs/sec     12820.96    2132.64   19982.65
+  Latency        9.75ms     3.41ms   217.04ms
   HTTP codes:
     1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
     others - 0
-  Throughput:     2.59MB/s
+  Throughput:     2.93MB/s
 ```
 
 #### Golang Fiber No Prefork
@@ -215,6 +215,19 @@ Statistics        Avg      Stdev        Max
     1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
     others - 0
   Throughput:     3.41MB/s
+```
+
+#### NestJS Fastify MikroORM
+
+```
+Total: 1m23s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     11963.59    2949.03   17899.57
+  Latency       10.45ms     3.82ms   180.00ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.75MB/s
 ```
 
 ---
