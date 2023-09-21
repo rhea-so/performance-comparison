@@ -138,3 +138,9 @@ Statistics        Avg      Stdev        Max
     others - 0
   Throughput:     2.59MB/s
 ```
+
+---
+
+결론, Node.js의 클러스터링은 딱히 성능에 큰 이점을 가져다 주진 않는다.
+
+https://stackoverflow.com/questions/26781371/node-js-cluster-doesnt-significantly-improve-performance
