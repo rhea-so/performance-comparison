@@ -239,7 +239,3 @@ https://stackoverflow.com/questions/26781371/node-js-cluster-doesnt-significantl
 그리고 번은 게임 체인저는 아닌 것 같다. (별로 안빠르다. IO 병목 때문인가.)
 
 고가 진짜 빠르다.
-
-근데 생산성은 잘 모르겠다.
-
-Fastify MikroORM 조합이 생산성도 챙기고 성능도 챙기는 나쁘지 않는 조합일지도?
