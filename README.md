@@ -1,8 +1,10 @@
-# NestJS Fastify Cluster Best Practice
+# Performance Comparison
 
-## Benchmark
+## Benchmark Tool
 
-### Install Tool
+I use [bombardier](https://github.com/codesenberg/bombardier) for benchmarking the server. bombardier is a HTTP(S) benchmarking tool. It is written in Go programming language and uses excellent fasthttp instead of Go's default http library, because of its lightning fast performance.
+
+### Installation
 
 ```sh
 curl -OL https://github.com/codesenberg/bombardier/releases/download/v1.2.6/bombardier-darwin-arm64
@@ -11,29 +13,22 @@ sudo mv ./bombardier-darwin-arm64 /usr/local/bin/bombardier
 # Terminal Restart
 ```
 
-```sh
-bombardier -c 125 -n 10000000 http://localhost:3000
-```
+## Test Case
 
 > **Note**  
-> https://github.com/codesenberg/bombardier  
-> bombardier is a HTTP(S) benchmarking tool. It is written in Go programming language and uses excellent fasthttp instead of Go's default http library, because of its lightning fast performance.
+> My machine spec: 10Core CPU(Apple M1 Pro), 32GB RAM
 
-### Test Result
-
-동접 125명이 1천만 요청을 성공적으로 끝내기까지 얼마나 걸리는가?
+### Hello, World!
 
 ```sh
+# How long does it take for 125 users to successfully complete 10 million requests?
 bombardier -c 125 -n 10000000 http://localhost:3000
 ```
-
-> **Note**  
-> Spec: 10Core CPU(Apple M1 Pro), 32GB RAM
 
 #### NestJS Express No Clustering
 
 ```
-총 12분 22초 소요
+Total: 12m22s
 Statistics        Avg      Stdev        Max
   Reqs/sec     13463.00     992.13   16129.21
   Latency        9.28ms     1.17ms   675.85ms
@@ -46,7 +41,7 @@ Statistics        Avg      Stdev        Max
 #### NestJS Express Clustering
 
 ```
-총 2분 44초 소요
+Total: 2m44s
 Statistics        Avg      Stdev        Max
   Reqs/sec     60923.12   13099.81   88987.35
   Latency        2.05ms     2.48ms   201.63ms
@@ -59,7 +54,7 @@ Statistics        Avg      Stdev        Max
 #### NestJS Fastify No Clustering
 
 ```
-총 3분 5초 소요
+Total: 3m5s
 Statistics        Avg      Stdev        Max
   Reqs/sec     53832.30    4756.30   62935.49
   Latency        2.32ms   445.43us   216.23ms
@@ -72,7 +67,7 @@ Statistics        Avg      Stdev        Max
 #### NestJS Fastify Clustering
 
 ```
-총 1분 22초 소요
+Total: 1m22s
 Statistics        Avg      Stdev        Max
   Reqs/sec    121281.09   16563.88  139827.93
   Latency        1.03ms     2.97ms   182.40ms
