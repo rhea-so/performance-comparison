@@ -191,6 +191,32 @@ Statistics        Avg      Stdev        Max
   Throughput:     3.63MB/s
 ```
 
+#### Fastify MikroORM
+
+```
+Total: 1m9s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     14464.78    2870.49   21114.00
+  Latency        8.64ms     2.66ms   129.23ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.32MB/s
+```
+
+#### Fastify Sequelize
+
+```
+Total: 1m7s
+Statistics        Avg      Stdev        Max
+  Reqs/sec     14827.72    2844.85   20592.86
+  Latency        8.43ms     3.53ms   194.32ms
+  HTTP codes:
+    1xx - 0, 2xx - 1000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.41MB/s
+```
+
 ---
 
 결론, Node.js의 클러스터링은 딱히 성능에 큰 이점을 가져다 주진 않는다.
@@ -200,3 +226,7 @@ https://stackoverflow.com/questions/26781371/node-js-cluster-doesnt-significantl
 그리고 번은 게임 체인저는 아닌 것 같다. (별로 안빠르다. IO 병목 때문인가.)
 
 고가 진짜 빠르다.
+
+근데 생산성은 잘 모르겠다.
+
+Fastify MikroORM 조합이 생산성도 챙기고 성능도 챙기는 나쁘지 않는 조합일지도?
